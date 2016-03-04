@@ -11,18 +11,21 @@ package trabajoprog.Personaje;
  */
 public class Mago {
     int salud=550;
-    int mana=600;
+   private static  int mana=600;
     
      public int TenazaInfernal(){
         //consume 75% mana 
+        mana=this.mana-450;
         return (int) (Math.random()*(170-220)+1);
     }
     public int MagmaLiquido(){
         //consume 55% mana 
+        mana=this.mana-330;
         return (int) (Math.random()*(150-170)+1);
     }
     public int Resurgimiento(){
         //consume 90% Ataque curativo total 
+        mana=this.mana-500;
         return (int) (Math.random()*(400-500));
     }
      public int AtaqueRandomBasico(){
@@ -30,6 +33,7 @@ public class Mago {
     }
     //O ataque defensivo/bloqueo ataque
     public int AtaqueRandomBajo(){
+        mana=this.mana-60;
         return (int) (Math.random()*(61-80)+1);
     }
     public int AtaqueRandomMedio(){
