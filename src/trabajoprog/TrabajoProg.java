@@ -5,6 +5,7 @@
  */
 package trabajoprog;
 
+import Batalla.HacerDaño;
 import trabajoprog.Personaje.Asesino;
 
 /**
@@ -17,14 +18,10 @@ public class TrabajoProg {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Asesino obx = new Asesino ();
-        obx.BrechaNegra();
+        HacerDaño prueba = new HacerDaño();
+        prueba.golpePrueba();
         
-        obx.GolpeSombrio();
         
-        obx.GolpeSombrio();
-        
-        obx.GolpeSombrio();
         
     }
     
