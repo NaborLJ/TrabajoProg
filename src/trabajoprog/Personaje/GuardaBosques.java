@@ -12,28 +12,32 @@ package trabajoprog.Personaje;
 public class GuardaBosques {
     int salud=570;
     int enfoque=500;
-     public int FlechaVenenosa(){
+    int dañoGuarda;
+     public int FlechaVenenosa(int dañoGuarda){
         //consume 75% mana 
          if(enfoque>375){
            this.enfoque=enfoque-375;
-        return (int) (Math.random()*(180-220)+1);
+        dañoGuarda=(int) (Math.random()*(180-220)+1);
+        return dañoGuarda;
     }else
         System.out.println("¡No hay suficiente energia! Energía actual: "+enfoque);
         return 0;
 }
-    public int DisparoPenetrante(){
+    public int DisparoPenetrante(int dañoGuarda){
         //consume 55% mana 
         if(enfoque>275){
-        return (int) (Math.random()*(150-170)+1);
+        dañoGuarda=(int) (Math.random()*(150-170)+1);
+        return dañoGuarda;
     }
         else
         System.out.println("¡No hay suficiente precisión! Precisión actual: "+enfoque);
         return 0;
     }
-    public int FlechaMortal(){
+    public int FlechaMortal(int dañoGuarda){
         //consume 65% Ataque curativo total 
         if(enfoque>325 && salud>150){
-        return (int) (Math.random()*(200-500));
+        dañoGuarda=(int) (Math.random()*(200-500));
+        return dañoGuarda;
     }else
         System.out.println("¡No hay suficiente enfoque! Enfoque actual: "+enfoque);
         return 0;
@@ -52,29 +56,30 @@ public class GuardaBosques {
             return 0;
         
     }
-     public int AtaqueRandomBasico(){
+     public int AtaqueRandomBasico(int dañoGuarda){
      return (int) (Math.random()*(40-60)+1);
     }
     //O ataque defensivo/bloqueo ataque
     public int AtaqueRandomBajo(){
         if(enfoque>40){
-        return (int) (Math.random()*(30-80)+1);
+        dañoGuarda=(int) (Math.random()*(30-80)+1);
+        return dañoGuarda;
         }else
         System.out.println("¡No hay suficiente enfoque! Enfoque actual: "+enfoque);
         return 0;
     }
-    public int AtaqueRandomMedio(){
+    public int AtaqueRandomMedio(int dañoGuarda){
         if(enfoque>60){
-      return (int) (Math.random()*(70-140)+1);
+      dañoGuarda=(int) (Math.random()*(70-140)+1);
     }else
         System.out.println("¡No hay suficiente enfoque! Enfoque actual: "+enfoque);
         return 0;
     }
     public void AtaquesArquero(){
-        int DisparoFirme=AtaqueRandomBasico();
-        int FuegoRapido=AtaqueRandomBajo();
-        int LluviaDeFlechas=AtaqueRandomMedio();
-        int AtaqueEspecial=FlechaVenenosa();
+        int DisparoFirme=AtaqueRandomBasico( dañoGuarda);
+        int FuegoRapido=AtaqueRandomBajo( );
+        int LluviaDeFlechas=AtaqueRandomMedio( dañoGuarda);
+        int AtaqueEspecial=FlechaVenenosa( dañoGuarda);
         
     }
 
@@ -93,7 +98,10 @@ public class GuardaBosques {
     public int getEnfoque() {
         return this.enfoque=enfoque;
     }
-
+    public int doDamage(int dañoGuarda){
+        salud=salud-dañoGuarda;
+        return dañoGuarda;
+    }
     
     
 }
