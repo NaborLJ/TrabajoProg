@@ -5,6 +5,7 @@
  */
 package trabajoprog;
 
+import Batalla.Combate;
 import Batalla.HacerDaño;
 import trabajoprog.Personaje.Asesino;
 
@@ -18,8 +19,9 @@ public class TrabajoProg {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        HacerDaño prueba = new HacerDaño();
-        prueba.golpePrueba();
+        
+        Combate prueba = new Combate ();
+        prueba.DañoJugador1();
         
         
         
